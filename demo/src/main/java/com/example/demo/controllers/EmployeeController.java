@@ -90,7 +90,7 @@ public class EmployeeController {
 
         result = employeeService.save(employee);
 
-        user.setId(employee.getId());
+        user.setId(employeeService.findIdByEmail(employee.getEmail()));
         result2 = userService.save(user);
         if(result && result2){
             return "redirect:/employee";
