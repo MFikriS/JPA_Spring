@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.models.Employee;
 import com.example.demo.models.User;
@@ -69,7 +68,7 @@ public class UserManagementController {
     }
 
     @PostMapping(value = {"checkLogin"})
-    public String checkLogin(Employee employee, User user, Model model){
+    public String checkLogin(Employee employee, User user){
         String cekLogin = employeeService.findEmailAndPassword(employee.getEmail(), user.getPassword());
         if(cekLogin != null){
             //model.addAttribute("employee", employeeService.getByEmail(employee.getEmail()));
