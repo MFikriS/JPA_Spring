@@ -3,16 +3,11 @@ package com.example.demo.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.data.jpa.repository.Query;
 import com.example.demo.models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
-    /*
-    @Query("SELECT t FROM Thing t WHERE t.fooIn = ?1 AND t.bar = ?2")
-    User findByFooInAndBar(String fooIn, String bar);
-    List<User> findByEmail(String email);
-
-    List<User> findByPassword(String password);
-    */
+    @Query(value = "SELECT u.password FROM user u WHERE u.password = ?1", nativeQuery = true)
+    public String findPassword(String password);
 }

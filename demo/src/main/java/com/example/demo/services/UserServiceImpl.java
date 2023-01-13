@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.models.User;
-import com.example.demo.models.Role;
+//import com.example.demo.models.Role;
 import com.example.demo.repositories.UserRepository;
 
 @Service
@@ -38,6 +38,11 @@ public class UserServiceImpl implements UserService{
     public Boolean delete(Integer id) {
         userRepository.deleteById(id);
         return !userRepository.findById(id).isPresent();
+    }
+
+    @Override
+    public String findPassword(String password){
+        return userRepository.findPassword(password);
     }
 
     /*
