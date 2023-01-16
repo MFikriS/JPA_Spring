@@ -40,9 +40,15 @@ public class UserServiceImpl implements UserService{
         return !userRepository.findById(id).isPresent();
     }
 
+    // @Override
+    // public String findPassword(String password){
+    //     return userRepository.findPassword(password);
+    // }
+
     @Override
-    public String findPassword(String password){
-        return userRepository.findPassword(password);
+    public Boolean changePassword(String password, Integer id){
+        userRepository.changePassword(password, id);
+        return userRepository.findById(id).isPresent();
     }
 
     /*

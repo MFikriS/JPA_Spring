@@ -9,5 +9,5 @@ public interface RoleService {
     public Role getById(Integer id);
     public Boolean save(Role role);
     public Boolean delete(Integer id);
-    public Integer getByIdLevel(); 
+    public Integer getIdByMaxLevel(); 
 }

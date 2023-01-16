@@ -37,8 +37,8 @@ public class RoleServiceImpl implements RoleService{
     }
     
     @Override
-    public Integer getByIdLevel() {
-        return roleRepository.findByLevelRole();
+    public Integer getIdByMaxLevel() {
+        return roleRepository.findIdByLevelMax();
     }
     
     

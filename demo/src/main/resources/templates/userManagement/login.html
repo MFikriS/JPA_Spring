@@ -10,10 +10,16 @@
                 th:href="@{/userManagement/register}"
                 >REGISTER
             </a>
+            <a 
+                class="btn btn-info"
+                style="margin-bottom: 10px; margin-top: 10px;"
+                th:href="@{/userManagement/forgotPassword}"
+                >FORGOT PASSWORD
+            </a>
             <form
                 th:action="@{/userManagement/checkLogin}"
                 method="post"
-            >
+            >   
                 <div class="form-group col-md-4">
                     <label for="Email" class = "col-form-label">Email</label>
                     <input type="text" class="form-control" id="email" th:field="*{employee.email}">

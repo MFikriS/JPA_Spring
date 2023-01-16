@@ -8,13 +8,13 @@ import com.example.demo.models.Role;
 
 @Repository
 public interface RoleRepository extends JpaRepository<Role, Integer>{
-    
-    @Query(value = "SELECT r.id FROM Role r WHERE r.id = (SELECT max(r.level) FROM Role r)", nativeQuery = true)
+
+    @Query(value = "SELECT r.id FROM Role r WHERE r.level = (SELECT MAX(r.level) FROM Role r)", nativeQuery = true)
+    public Integer findIdByLevelMax();
     /*
     @Query("SELECT r.id FROM Role r WHERE r.id = (SELECT max(d.id) FROM Role d)")
     */
     //public Role max();
-    public Integer findByLevelRole();
     
 
 }
